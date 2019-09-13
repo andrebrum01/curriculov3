@@ -6,7 +6,49 @@ body,html{
 	width: 100%;
     height:100%;
 	font-family: 'Indie Flower', cursive;
+}
+:root{
+	--azulback:#334b6e;
+}
+@keyframes vibrar{
+	0% {
+		transform: translateX(5px);
+	}
+	10%{
+		transform: translateX(-10px);
+	}
+	20%{
+		transform: translateX(10px);
+	}
+	30%{
+		transform: translateX(-10px);
 
+	}
+	40%{
+		transform: translateX(10px);
+
+	}
+	50%{
+		transform: translateX(-10px);
+
+	}
+	60%{
+		transform: translateX(10px);
+
+	}
+	70%{
+		transform: translateX(-10px);
+
+	}
+	80%{
+		transform: translateX(10px);
+	}
+	90%{
+		transform: translateX(-10px);
+	}
+	100% {
+	transform: translateX(5px);
+	}
 }
 @keyframes pulse{
 	0% {
@@ -21,6 +63,19 @@ body,html{
     transform: scale(1);
   }
 }
+@keyframes mexer{
+	0% {
+    transform: translateY(-20px);
+  }
+
+  	50% {
+    transform: translateY(20px);
+  }
+
+  	100% {
+    transform: translateY(-20px);
+  }
+}
 #top{
 	height: 100%;
 	width: 100%;
@@ -28,8 +83,10 @@ body,html{
 	grid-template-columns:1fr 1fr;
 	grid-template-rows:1fr 1fr;
 	background:cover;
-	justify-items: center;
-	align-items: center;
+	/*justify-items: center;
+	align-items: center;*/
+	grid-row-gap: 150px;
+	overflow: hidden;
 }
 #box-carta{
 	position: absolute;
@@ -41,6 +98,7 @@ body,html{
 	width: 300px;
 	z-index: 1;
 	perspective: 1000px;
+	animation: vibrar .8s ease;
 }
 #box-carta:hover .carta {
     transform: rotateY(180deg);
@@ -73,7 +131,7 @@ body,html{
 }
 
 .pulso{
-	background-color:#334b6e;
+	background-color:var(--azulback);
 	height: 300px;
 	width: 300px;
 	border-radius: 100%;
@@ -85,6 +143,18 @@ body,html{
 	opacity: 0.5;
 	animation: pulse 2s ease infinite;
 	z-index: 0;
+}
+.seta{
+	background-image:url(../img/seta.png);
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: calc(100% - 70px);
+	animation: mexer 1.5s ease infinite;
+	z-index: 1;
 }
 #toggle{
 	visibility: hidden;
@@ -99,28 +169,40 @@ body,html{
 }
 #frase{
 	visibility: hidden;
-	transition: all 0.5s linear;
+	transition: all 0.1s linear;
 	display: block;
 	justify-content: center;
 	align-items: center;
-	margin:auto auto;
-	height: auto;
+	position: relative;
+	top:25%;
+	left: 25%;
 	width: 80%;
+	padding-right: 5px;
+	padding-left: 5px;
+
 }
-#p1{
+#p{
 	margin-top:10px;
 	margin-bottom: 0px;
 	margin-left: 5px;
 	font-size: 13px;
 	width: 70%;
 	height: auto;
-	background: #EFEFEF; 
-	color: blue;
+	background: var(--azulback); 
+	color: white;
 	text-align: center; 
 	padding-top: 5px; 
-	border-radius: 6px; 
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column; 
 
-}    
+}   
+#p span{
+	font-size: 18px;
+	color: white;
+	text-transform: uppercase;
+	text-shadow: black 0px 0px 5px;
+} 
 #seta1{
 	content: " ";
 	position: relative;
@@ -129,22 +211,8 @@ body,html{
 	height:0px;
 	border-width: 8px; 
 	border-style: solid; 
-	border-color: #EFEFEF transparent transparent transparent;
+	border-color: var(--azulback) transparent transparent transparent;
 }
-#p2{
-	margin-top:10px;
-	margin-bottom: 0px;
-	margin-left: 5px;
-	font-size: 13px;
-	width: 70%;
-	height: auto;
-	background: #EFEFEF; 
-	color: blue;
-	text-align: center; 
-	padding-top: 5px; 
-	border-radius: 6px; 
-
-}    
 #seta2{
 	content: " ";
 	position: relative;
@@ -153,56 +221,31 @@ body,html{
 	height:0px;
 	border-width: 8px; 
 	border-style: solid; 
-	border-color: #EFEFEF transparent transparent transparent;
-}
-#p3{
-	margin-top:10px;
-	margin-bottom: 0px;
-	margin-left: 5px;
-	font-size: 13px;
-	width: 70%;
-	height: auto;
-	background: #EFEFEF; 
-	color: blue;
-	text-align: center; 
-	padding-top: 5px; 
-	border-radius: 6px; 
-	align-self: bottom;
-}    
+	border-color: var(--azulback) transparent transparent transparent;
+}   
 #seta3{
 	content: " ";
 	position: relative;
 	left: calc(70% - 28px);
+	bottom: -10px;
 	width:0px;
 	height:0px;
 	border-width: 8px; 
 	border-style: solid; 
-	border-color: #EFEFEF transparent transparent transparent;
+	border-color: transparent transparent var(--azulback) transparent;
 }
-#p4{
-	margin-top:10px;
-	margin-bottom: 0px;
-	margin-left: 5px;
-	font-size: 13px;
-	width: 70%;
-	height: auto;
-	background: #EFEFEF; 
-	color: blue;
-	text-align: center; 
-	padding-top: 5px; 
-	border-radius: 6px; 
-	align-self: bottom;
-}    
 #seta4{
 	content: " ";
 	position: relative;
-	left: calc(70% - 28px);
+	left: calc(28px);
 	width:0px;
 	height:0px;
+	bottom: -10px;
 	border-width: 8px; 
 	border-style: solid; 
-	border-color: #EFEFEF transparent transparent transparent;
+	border-color: transparent transparent var(--azulback) transparent;
 }
+
 section{
 	height: 100%;
 	width: 100%;
