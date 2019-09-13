@@ -247,28 +247,25 @@ body,html{
 #frase{
 	visibility: hidden;
 	transition: all 0.1s linear;
-	display: block;
+	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	position: relative;
 	top:25%;
-	left: 25%;
-	width: 80%;
-	padding-right: 5px;
-	padding-left: 5px;
+	left: 15%;
+	right: 15%;
+	width: auto;
+	height: auto;
 
 }
 #p{
-	margin-top:10px;
-	margin-bottom: 0px;
-	margin-left: 5px;
 	font-size: 13px;
-	width: 70%;
+	padding: 5px;
 	height: auto;
+	max-width: 70%;
 	background: var(--azulback); 
 	color: white;
-	text-align: center; 
-	padding-top: 5px; 
+	text-align: center;  
 	border-radius: 6px;
 	display: flex;
 	flex-direction: column; 
@@ -283,7 +280,8 @@ body,html{
 #seta1{
 	content: " ";
 	position: relative;
-	left: calc(70% - 28px);
+	left: calc( 28px);
+	top:-13px;
 	width:0px;
 	height:0px;
 	border-width: 8px; 
@@ -293,7 +291,8 @@ body,html{
 #seta2{
 	content: " ";
 	position: relative;
-	left: calc(28px);
+	top:-13px;
+	left: calc(-80px);
 	width:0px;
 	height:0px;
 	border-width: 8px; 
@@ -303,8 +302,8 @@ body,html{
 #seta3{
 	content: " ";
 	position: relative;
-	left: calc(70% - 28px);
-	bottom: -10px;
+	left: calc(28px);
+	bottom: -13px;
 	width:0px;
 	height:0px;
 	border-width: 8px; 
@@ -314,10 +313,10 @@ body,html{
 #seta4{
 	content: " ";
 	position: relative;
-	left: calc(28px);
+	left: calc(-80px);
 	width:0px;
 	height:0px;
-	bottom: -10px;
+	bottom: -13px;
 	border-width: 8px; 
 	border-style: solid; 
 	border-color: transparent transparent var(--azulback) transparent;
@@ -342,10 +341,10 @@ section{
 	background-color: #334b6e;
 	z-index: 1;
 	position: absolute;
-	left: 49%;
+	right: 40%;
 	height: 100%;
-	width: 15%;
-	transform: skew(8deg) translate(-45%);
+	width: 50%;
+	transform: skew(8deg);
 }
 #img{
 	z-index: 0;
@@ -369,7 +368,8 @@ section{
 	order:2;
 }
 #conteudo:nth-child(odd) #sobre{
-	transform: skew(-8deg) translate(-45%);
+	left: 40%;
+	transform: skew(-8deg);
 }
 #texto h2{
 	text-align: center;
