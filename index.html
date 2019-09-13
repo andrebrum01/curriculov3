@@ -10,12 +10,34 @@
 <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 <body>
 	<section id="top">
-		<div id="imagem"></div>
-		<div id="pulso"></div>
-		<!-- <div id="frase"><p id="p1">endereço</p><div id="seta"></div></div>
-		<div id="frase"><p id="p2"></p></div>
-		<div id="frase"><p id="p3"></p></div>
-		<div id="frase"><p id="p4"></p></div> -->
+			<input type="checkbox" id="toggle"/>
+			<div id="box-carta" onclick="visivel()">
+				<label id="virar" for="toggle">
+				<div id="carta"class="carta">
+					<div class="cara frente">
+					</div>
+					<div class="cara detras"></div>
+				</div>
+				</label>
+			</div>
+		
+		<div class="pulso"></div>
+			<div id="frase">
+				<p id="p1">endereço</p>
+				<div id="seta1"></div>
+			</div>
+			<div id="frase">
+				<p id="p2">endereço</p>
+				<div id="seta2"></div>
+			</div>
+			<div id="frase">
+				<p id="p3">endereço</p>
+				<div id="seta3"></div>
+			</div>
+			<div id="frase">
+				<p id="p4">endereço</p>
+				<div id="seta4"></div>
+			</div>
 	</section>
 	<section id="conteudo">
 		<div id="texto">
@@ -72,4 +94,5 @@
 		<div id="sobre"></div>
 	</section>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </html>

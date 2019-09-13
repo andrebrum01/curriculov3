@@ -25,26 +25,54 @@ body,html{
 	height: 100%;
 	width: 100%;
 	display: grid;
-	/*grid-template-columns:1fr 1fr;
-	grid-template-rows:1fr 1fr;*/
+	grid-template-columns:1fr 1fr;
+	grid-template-rows:1fr 1fr;
 	background:cover;
+	justify-items: center;
+	align-items: center;
 }
-#imagem{
-	background:url(../img/nome2.png);
-	background:cover;
-	background-size: 300px 300px;
-	height: 300px;
-	width: 300px;
-	border-radius: 100%;
+#box-carta{
 	position: absolute;
 	margin: auto;
 	left: 0;
 	right: 0;
-	top: 0;
-	bottom: 0;
+	top: calc(50% - 150px);
+	height: 300px;
+	width: 300px;
 	z-index: 1;
+	perspective: 1000px;
 }
-#pulso{
+#box-carta:hover .carta {
+    transform: rotateY(180deg);
+}
+.cara {
+  	position: absolute;
+  	backface-visibility: hidden;
+  	height: 300px;
+	width: 300px;
+	border-radius: 100%;
+}
+.carta{
+	transform-style: preserve-3d;
+ 	transition: all 0.5s linear;
+ 	height: 300px;
+	width: 300px;
+	border-radius: 100%;
+}
+.frente {
+	background:url(../img/nome2.png);
+	background:cover;
+	background-size: 300px 300px;
+}
+
+.detras{
+	background:url(../img/nome4.png);
+	background:cover;
+	background-size: 300px 300px;
+ 	transform: rotateY(180deg);
+}
+
+.pulso{
 	background-color:#334b6e;
 	height: 300px;
 	width: 300px;
@@ -58,13 +86,26 @@ body,html{
 	animation: pulse 2s ease infinite;
 	z-index: 0;
 }
-/*#frase{
+#toggle{
+	visibility: hidden;
+	position: absolute;
+}
+#toggle:checked ~ #frase{
+	    visibility: visible;
+}
+
+#box-carta:hover ~ #frase{
+    visibility: visible;
+}
+#frase{
+	visibility: hidden;
+	transition: all 0.5s linear;
 	display: block;
 	justify-content: center;
 	align-items: center;
 	margin:auto auto;
-	height: 100%;
-	width: 100%;
+	height: auto;
+	width: 80%;
 }
 #p1{
 	margin-top:10px;
@@ -80,7 +121,7 @@ body,html{
 	border-radius: 6px; 
 
 }    
-#seta{
+#seta1{
 	content: " ";
 	position: relative;
 	left: calc(70% - 28px);
@@ -89,7 +130,79 @@ body,html{
 	border-width: 8px; 
 	border-style: solid; 
 	border-color: #EFEFEF transparent transparent transparent;
-}*/
+}
+#p2{
+	margin-top:10px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	font-size: 13px;
+	width: 70%;
+	height: auto;
+	background: #EFEFEF; 
+	color: blue;
+	text-align: center; 
+	padding-top: 5px; 
+	border-radius: 6px; 
+
+}    
+#seta2{
+	content: " ";
+	position: relative;
+	left: calc(28px);
+	width:0px;
+	height:0px;
+	border-width: 8px; 
+	border-style: solid; 
+	border-color: #EFEFEF transparent transparent transparent;
+}
+#p3{
+	margin-top:10px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	font-size: 13px;
+	width: 70%;
+	height: auto;
+	background: #EFEFEF; 
+	color: blue;
+	text-align: center; 
+	padding-top: 5px; 
+	border-radius: 6px; 
+	align-self: bottom;
+}    
+#seta3{
+	content: " ";
+	position: relative;
+	left: calc(70% - 28px);
+	width:0px;
+	height:0px;
+	border-width: 8px; 
+	border-style: solid; 
+	border-color: #EFEFEF transparent transparent transparent;
+}
+#p4{
+	margin-top:10px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	font-size: 13px;
+	width: 70%;
+	height: auto;
+	background: #EFEFEF; 
+	color: blue;
+	text-align: center; 
+	padding-top: 5px; 
+	border-radius: 6px; 
+	align-self: bottom;
+}    
+#seta4{
+	content: " ";
+	position: relative;
+	left: calc(70% - 28px);
+	width:0px;
+	height:0px;
+	border-width: 8px; 
+	border-style: solid; 
+	border-color: #EFEFEF transparent transparent transparent;
+}
 section{
 	height: 100%;
 	width: 100%;
