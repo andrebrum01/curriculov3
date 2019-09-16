@@ -9,6 +9,7 @@ body,html{
 }
 :root{
 	--azulback:#334b6e;
+	--tam:300px;
 }
 @keyframes chamar{
 	0% {
@@ -115,6 +116,9 @@ body,html{
     transform: translateY(-20px);
   }
 }
+
+/*.......................................................*/
+
 #top{
 	height: 100%;
 	width: 100%;
@@ -124,7 +128,7 @@ body,html{
 	background:cover;
 	/*justify-items: center;
 	align-items: center;*/
-	grid-row-gap: 150px;
+	grid-row-gap: calc(var(--tam)/2);
 	overflow: hidden;
 }
 #box-carta{
@@ -132,11 +136,13 @@ body,html{
 	margin: auto;
 	left: 0;
 	right: 0;
-	top: calc(50% - 150px);
-	height: 300px;
-	width: 300px;
+	top: calc(50% - calc(var(--tam)/2));
+	height:var(--tam);
+	width:var(--tam);
 	z-index: 1;
 	perspective: 1000px;
+	justify-content: center;
+	align-items: center;
 }
 #box-carta:hover .carta {
     transform: rotateY(180deg);
@@ -144,40 +150,40 @@ body,html{
 .cara {
   	position: absolute;
   	backface-visibility: hidden;
-  	height: 300px;
-	width: 300px;
+  	height: 100%;
+	width: 100%;
 	border-radius: 100%;
 }
 .carta{
 	transform-style: preserve-3d;
  	transition: all 0.5s linear;
- 	height: 300px;
-	width: 300px;
+ 	height: 100%;
+	width: 100%;
 	border-radius: 100%;
 }
 .frente {
 	background:url(../img/nome2.png);
 	background:cover;
-	background-size: 300px 300px;
+	background-size: 100% 100%;
 }
 
 .detras{
 	background:url(../img/nome4.png);
 	background:cover;
-	background-size: 300px 300px;
+	background-size: 100% 100%;
  	transform: rotateY(180deg);
 }
 
 .pulso{
 	background-color:var(--azulback);
-	height: 300px;
-	width: 300px;
+	height: var(--tam);
+	width: var(--tam);
 	border-radius: 100%;
 	position: absolute;
 	margin: auto;
 	left: 0;
 	right: 0;
-	top: calc(50% - 150px);
+	top: calc(50% - calc(var(--tam)/2));
 	opacity: 0.5;
 	animation: pulse 2s ease infinite;
 	z-index: 0;
@@ -203,7 +209,7 @@ body,html{
 	margin: auto;
 	left: 0;
 	right: 0;
-	top: calc(50% - 220px);
+	top: calc(50% - calc(var(--tam) - 80px));
 	z-index: 1;
 }
 .textoHei{
@@ -322,13 +328,11 @@ body,html{
 	border-color: transparent transparent var(--azulback) transparent;
 }
 
-section{
-	height: 100%;
-	width: 100%;
-}
 #conteudo{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	height: 100%;
+	width: 100%;
 }
 #texto{
 	z-index: 2;
@@ -351,7 +355,7 @@ section{
 	height: 100%;
 	width: 100%;
 	order:2;
-	background-position: center;
+	background-position: bottom;
   	background-repeat: no-repeat;
   	background-size: cover;
 }
@@ -391,4 +395,32 @@ section{
 	color: white;
 	margin-left: 10px;
 	margin-right: 10px;
+}
+
+/*.......................................................*/
+
+@media only screen and (max-width: 800px){
+:root{
+	--tam:250px;
+}
+#conteudo{
+	display: grid;
+	grid-template-columns: none;
+	grid-template-rows: 1fr 500px;
+	height: auto;
+}
+#texto{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+#conteudo:nth-child(odd) #img{
+	order:2;
+}
+#conteudo:nth-child(odd) #texto{
+	order:1;
+}
+#sobre{
+	visibility: hidden;
+}
+
 }
