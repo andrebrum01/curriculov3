@@ -286,7 +286,6 @@ body,html{
 #seta1{
 	content: " ";
 	position: relative;
-	left: calc( 28px);
 	top:-13px;
 	width:0px;
 	height:0px;
@@ -298,7 +297,6 @@ body,html{
 	content: " ";
 	position: relative;
 	top:-13px;
-	right: 60px;
 	width:0px;
 	height:0px;
 	border-width: 8px; 
@@ -308,7 +306,6 @@ body,html{
 #seta3{
 	content: " ";
 	position: relative;
-	left: calc(28px);
 	bottom: -13px;
 	width:0px;
 	height:0px;
@@ -319,7 +316,6 @@ body,html{
 #seta4{
 	content: " ";
 	position: relative;
-	right: 60px;
 	width:0px;
 	height:0px;
 	bottom: -13px;
